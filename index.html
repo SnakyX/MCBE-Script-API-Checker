@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MCBE Dev Studio Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="boot-box">
+    <div class="boot-title">MCBE Script API Checker</div>
+    <div id="boot-status">Initializing environment...</div>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+  </div>
+</div>
+
+<header>
+  <h1>MCBE Script API Checker</h1>
+  <span class="creator">Created by @snakyxy</span>
+</header>
+
+<div class="toolbar">
+  <button onclick="loadExample()">Load Example</button>
+  <button onclick="clearEditor()">Clear</button>
+  <button onclick="runDiagnosis()">Run Diagnosis</button>
+  <input type="file" id="file-upload" style="display:none" onchange="handleFileUpload(event)">
+  <button onclick="document.getElementById('file-upload').click()">Upload File</button>
+  <button onclick="downloadScript()">Download Script</button>
+</div>
+
+<div id="editor"></div>
+
+<div class="diagnostics">
+  <h3>Diagnostics</h3>
+  <div id="errors"></div>
+</div>
+
+<footer class="social-footer">
+  <a href="https://youtube.com/@snakyxy" target="_blank" class="social yt">▶ YouTube</a>
+  <a href="https://discord.gg/yourinvite" target="_blank" class="social dc">💬 Discord</a>
+  <a href="https://github.com/snakyxy" target="_blank" class="social gh">💻 GitHub</a>
+</footer>
+
+<script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
