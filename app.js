@@ -117,3 +117,11 @@ function downloadScript(){
   a.href=url; a.download="script.ts"; a.click();
   URL.revokeObjectURL(url);
 }
+
+window.editor = monaco.editor.create(document.getElementById("editor"), {
+  value: "...",
+  language: "typescript",
+  theme: "vs-dark",
+  automaticLayout: true, // 🔥 wajib
+  minimap: { enabled: false }, // minimap tidak cocok di mobile
+});
