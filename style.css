@@ -1,8 +1,14 @@
 body {
-  margin: 0;
-  background: #0f172a;
-  color: white;
-  font-family: Arial;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+}
+
+
+#editor {
+  height: calc(100vh - 300px);
+  width: 100%;
 }
 
 header {
@@ -32,6 +38,9 @@ header {
 }
 
 .toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   padding: 10px 20px;
 }
 
@@ -49,10 +58,6 @@ button:hover {
   background: #374151;
 }
 
-#editor {
-  height: 450px;
-  border-top: 1px solid #1f2937;
-}
 
 .diagnostics {
   padding: 20px;
@@ -166,4 +171,33 @@ button:hover {
 .social:hover {
   transform: translateY(-2px);
   opacity: 0.85;
+}
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 18px;
+  }
+
+  .creator {
+    font-size: 12px;
+  }
+
+  .toolbar button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .diagnostics {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  #editor {
+    height: calc(100vh - 280px); /* sesuaikan */
+  }
+
+  .social-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
