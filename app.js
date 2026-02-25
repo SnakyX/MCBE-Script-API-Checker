@@ -51,7 +51,7 @@ require(["vs/editor/editor.main"], async function(){
 
   setProgress(70,"Starting editor...");
   window.editor = monaco.editor.create(document.getElementById("editor"),{
-    value:`import { world } from "@minecraft/server";\nworld.afterEvents.playerSpawn.subscribe(ev=>ev.player.sendMessage("Dev Studio Ready 🚀"));`,
+    value:`import { world } from "@minecraft/server";\nworld.afterEvents.playerSpawn.subscribe(ev => {\nev.player.sendMessage("@snakyxy")\n});`,
     language:"typescript",
     theme:"vs-dark",
     automaticLayout:true,
@@ -97,7 +97,7 @@ async function runDiagnosis(){
    TOOLBAR FUNCTIONS
 ========================= */
 function loadExample(){
-  editor.setValue(`import { world, system } from "@minecraft/server";\nsystem.runInterval(()=>{world.sendMessage("Tick running...");},20);`);
+  editor.setValue(`import { world, system } from "@minecraft/server";\nsystem.runInterval(()=>{\nworld.sendMessage("Tick running...");\n},20);`);
 }
 
 function clearEditor(){ editor.setValue(""); }
