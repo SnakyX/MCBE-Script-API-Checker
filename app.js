@@ -125,3 +125,15 @@ window.editor = monaco.editor.create(document.getElementById("editor"), {
   automaticLayout: true, // 🔥 wajib
   minimap: { enabled: false }, // minimap tidak cocok di mobile
 });
+
+async function validateWithServer(code) {
+  const res = await fetch("/api/validate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ code })
+  });
+
+  return await res.json();
+}
